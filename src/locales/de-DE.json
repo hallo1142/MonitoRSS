@@ -1,0 +1,611 @@
+{
+  "generics": {
+    "defaultSetting": "Standart ist `{{value}}`.",
+    "backupReminder": "Nachdem du alles eingestellt hast, wird empfohlen das du mit {{prefix}}backup ein Backup von deinen Einstellungen erstellst.",
+    "channelUpper": "Kanal",
+    "channelLower": "Kanal",
+    "enabledUpper": "Aktiviert",
+    "enabledLower": "aktiviert",
+    "disabledUpper": "Deaktiviert",
+    "disabledLower": "deaktiviert"
+  },
+  "commandDescriptions": {
+    "add": {
+      "description": "Füge einen RSS Feed in dem Channel wo der Befehl ausgeführt wird hinzu. Um mehrere Feedas können hinzuzufügen, trenne diese mit `>`.",
+      "args": {
+        "<link>": "Feed URL."
+      }
+    },
+    "alert": {
+      "description": "Füge oder entferne Nutzer, die eine Direktnachricht bekommen, wenn ein Feed eine Warnung oder einen Fehler schmeißt.",
+      "args": {
+        "add <user id/mention>": "Füge einen Nutzer hinzu, der Direktnachrichten erhalten soll.",
+        "remove <user id/mention>": "Entferne einen Nutzer, der keine Direktnachrichten mehr erhalten soll.",
+        "list": "Gib die Liste der aktuellen Nutzer aus, die Direktnachrichten erhalten."
+      }
+    },
+    "backup": {
+      "description": "Erstelle ein Backup vom Server, welches dir als JSON Anhang ausgegeben wird."
+    },
+    "clone": {
+      "action": "Feed Einstellungen klonen",
+      "description": "Klone Feed Einstellungen zu anderen Feeds"
+    },
+    "compare": {
+      "action": "Setze Vergleiche zu Artikel Checks",
+      "description": "Setze zusätzliche postive/negative Checks für Artikel für eine bessere Kontrolle welche Artikel auf deinen Server gesendet werden.",
+      "args": {
+        "list": "Gib die Liste aller aktuellen Vergleiche aus.",
+        "(+|-)<property>": "Die positiven oder negativen Artikel Einstellungen zum hinzufügen für Vergleiche. Mehr als eine kann hinzugefügt werden."
+      }
+    },
+    "date": {
+      "description": "Öffnet ein Menü zum einstellen, wie das Datum angezeigt wird."
+    },
+    "dump": {
+      "action": "Rohe Platzhalter Ausgabe",
+      "args": {
+        "original": "Gibt die originale, unformatierte JSON aus."
+      }
+    },
+    "embed": {
+      "action": "Embed einstellen",
+      "description": "Öffnet ein Menü um eine Embed eines Feeds zu verändern. Dies ersetzt die normale Emved von Discord, welche normalerweise gesendet wird, wenn ein Link gesendet wird."
+    },
+    "embed.fields": {
+      "action": "Embed Felder einstellen",
+      "description": "Öffnet ein Menü um Embed Felder der Embed Nachricht eines Feeds zu verändern. Dies ersetzt die normale Emved von Discord, welche normalerweise gesendet wird, wenn ein Link gesendet wird."
+    },
+    "filters": {
+      "action": "Feed Filter erstellen/entfernen",
+      "description": "Öffnet ein Menü, um globale Filter für einen Feed zu erstellen oder zu entfernen. Nachrichten, die keine der angegebenen Wörter beinhalten, werden nicht auf deinen Discord gesendet."
+    },
+    "invite": {
+      "description": "Gibt den Invite-Link für den Bot aus."
+    },
+    "list": {
+      "description": "Gibt alle aktiven Feeds eines Servers aus.",
+      "args": {
+        "[<channel mention>] [<search query>]": "Markiere einen Channel, um nur Feeds in einem Channel zu anzuzeigen, und/oder um eine Suchanfrage hinzuzufügen."
+      }
+    },
+    "locale": {
+      "description": "Ändert die Sprache der Befehle (Wenn die gewünschte Sprache verfügbar ist)",
+      "args": {
+        "<locale>": "Die gewünschte Sprache"
+      }
+    },
+    "mention": {
+      "action": "Abonnenten einstellen",
+      "description": "Öffnet ein Menü, um globale/gefilterte Abonnenten für Rollen/Nutzer von Feeds einzustellen."
+    },
+    "mention.filters": {
+      "description": "Öffnet ein Menü, um Filter für Abonnenten zu verwalten, damit diese nur markiert werden, wenn der Filter zutrifft."
+    },
+    "move": {
+      "description": "Öffnet ein Menü, um einen Feed in einen anderen Channel zu verschieben.",
+      "action": "Feed Kanal verschieben"
+    },
+    "options": {
+      "description": "Öffnet ein Menü für verschiedene Feed Einstellungen."
+    },
+    "prefix": {
+      "action": "Prefix ändern",
+      "description": "Ändert das Prefix der Befehlen ({{prefix}}).",
+      "args": {
+        "<prefix>": "Das neue Prefix",
+        "reset": "Setzt das Prefix zurück ({{prefix}})."
+      }
+    },
+    "refresh": {
+      "action": "Feed neuladen",
+      "description": "Öffnet ein Menü, um einen Feed wieder in den normalen Zyklus aufzunehmen, wenn dieser entfernt wurde aufgrund mehrerer Fehler."
+    },
+    "remove": {
+      "action": "",
+      "description": ""
+    },
+    "split": {
+      "action": "",
+      "description": ""
+    },
+    "stats": {
+      "description": ""
+    },
+    "sub": {
+      "description": ""
+    },
+    "sub.filters": {
+      "description": ""
+    },
+    "test": {
+      "args": {
+        "[simple] [latest]": ""
+      },
+      "action": "",
+      "description": ""
+    },
+    "text": {
+      "action": "",
+      "description": ""
+    },
+    "unsub": {
+      "description": ""
+    },
+    "version": {
+      "description": ""
+    },
+    "webhook": {
+      "action": "",
+      "description": ""
+    }
+  },
+  "commands": {
+    "add": {
+      "correctSyntax": "",
+      "improperFormat": "",
+      "processing": "",
+      "limitReached": "",
+      "alreadyExists": "",
+      "success": "",
+      "successInfo": "",
+      "failedLimit": "",
+      "failedList": "",
+      "reason": ""
+    },
+    "alert": {
+      "noFeeds": "",
+      "info": "",
+      "notFound": "",
+      "everyoneNotAllowed": "",
+      "alreadyEnabled": "",
+      "successDM": "",
+      "success": "",
+      "removedDM": "",
+      "removed": "",
+      "removeFail": "",
+      "listEmpty": "",
+      "list": ""
+    },
+    "backup": {
+      "noProfile": "",
+      "noPermission": ""
+    },
+    "clone": {
+      "copyFrom": "",
+      "copyTo": "",
+      "inputProperties": "",
+      "invalidProperties": "",
+      "confirm": "",
+      "confirmError": "",
+      "success": ""
+    },
+    "compare": {
+      "info": "",
+      "list": "",
+      "listNone": "",
+      "invalid": "",
+      "onlyTitle": "",
+      "reset": "",
+      "success": ""
+    },
+    "date": {
+      "selectTitle": "",
+      "dateLanguage": "",
+      "dateFormat": "",
+      "timezone": "",
+      "noFeeds": "",
+      "description": "",
+      "optionCurrentSetting": "",
+      "optionChangeTimezone": "",
+      "optionCustomizeFormat": "",
+      "optionChangeLanguage": "",
+      "optionReset": "",
+      "optionResetValue": "",
+      "successResetAll": "",
+      "successReset": "",
+      "successSet": "",
+      "promptNewLanguage": "",
+      "promptNewDateFormat": "",
+      "promptNewTimezone": "",
+      "invalidLanguage": "",
+      "invalidTimezone": ""
+    },
+    "dump": {
+      "generatingDump": "",
+      "generatedDump": ""
+    },
+    "embed": {
+      "numberedEmbed": "",
+      "embedSelection": "",
+      "embedSelectionDescription": "",
+      "embedSelectionOptionAdd": "",
+      "embedSelectionOptionAddDescription": "",
+      "embedSelectionOptionRemoveAll": "",
+      "currentProperties": "",
+      "currentPropertiesList": "",
+      "availableProperties": "",
+      "availablePropertiesList": "",
+      "invalidColorNumber": "",
+      "invalidColorRange": "",
+      "invalidProperties": "",
+      "removedAllEmbeds": "",
+      "removedEmbed": "",
+      "resetSuccess": "",
+      "updatedSuccess": "",
+      "updatedInfo": "",
+      "title": "",
+      "titleDescription": "",
+      "description": "",
+      "descriptionDescription": "",
+      "url": "",
+      "urlDescription": "",
+      "color": "",
+      "colorDescription": "",
+      "timestamp": "",
+      "timestampDescription": "",
+      "footerIconURL": "",
+      "footerIconURLDescription": "",
+      "footerText": "",
+      "footerTextDescription": "",
+      "thumbnailURL": "",
+      "thumbnailURLDescription": "",
+      "imageURL": "",
+      "imageURLDescription": "",
+      "authorName": "",
+      "authorNameDescription": "",
+      "authorURL": "",
+      "authorURLDescription": "",
+      "authorIconURL": "",
+      "authorIconURLDescription": "",
+      "settingProperty": "",
+      "settingPropertyTimestamp": "",
+      "settingPropertyTimestampError": "",
+      "inline": "",
+      "regular": "",
+      "blankField": "",
+      "embedFields": "",
+      "embedFieldsRemoveNone": "",
+      "embedFieldsRemoved": "",
+      "embedFieldsDescription": "",
+      "embedFieldsOptionRemove": "",
+      "embedFieldsOptionRemoveDescription": "",
+      "embedFieldsOptionAddRegular": "",
+      "embedFieldsOptionAddRegularDescription": "",
+      "embedFieldsOptionAddInline": "",
+      "embedFieldsOptionAddInlineDescription": "",
+      "embedFieldsOptionAddRegularBlank": "",
+      "embedFieldsOptionAddRegularBlankDescription": "",
+      "embedFieldsOptionAddInlineBlank": "",
+      "embedFieldsOptionAddInlineBlankDescription": "",
+      "embedFieldsOptionRemoveEmbedTitle": "",
+      "embedFieldsOptionRemoveEmbedDescription": "",
+      "embedFieldsAddedBlank": "",
+      "embedFieldsAddedBlankInline": "",
+      "embedFieldsSettingPrompt": "",
+      "embedFieldsSettingTitleLong": "",
+      "embedFieldsSettingValueLong": "",
+      "embedFieldsAdded": ""
+    },
+    "faq": {
+      "searchQueryRequired": "",
+      "searching": "",
+      "noResults": ""
+    },
+    "filters": {
+      "selectFeedDescription": "",
+      "feedFiltersCustomization": "",
+      "optionAddFilters": "",
+      "optionAddFiltersDescription": "",
+      "optionRemoveFilters": "",
+      "optionRemoveFiltersDescription": "",
+      "optionRemoveAllFilters": "",
+      "optionRemoveAllFiltersDescription": "",
+      "optionListFilters": "",
+      "optionListFiltersDescription": "",
+      "optionSendArticle": "",
+      "optionSendArticleDescription": "",
+      "removedAllSuccess": "",
+      "noFilters": "",
+      "noFiltersTryAgain": "",
+      "listFiltersDescription": "",
+      "connectionFailureLimit": "",
+      "noArticlesPassed": ""
+    },
+    "help": {
+      "controlPanelLink": "",
+      "description": "",
+      "arguments": "",
+      "support": "",
+      "checkDM": ""
+    },
+    "invite": {
+      "text": ""
+    },
+    "list": {
+      "noFeeds": "",
+      "noFeedsChannel": "",
+      "channelLimitReached": "",
+      "titleChecksEnabled": "",
+      "statusDisabled": "",
+      "statusFailed": "",
+      "statusOk": "",
+      "serverLimit": "",
+      "failAlert": "",
+      "feedList": "",
+      "feedListChannel": "",
+      "refreshRate": "",
+      "webhook": "",
+      "link": "",
+      "exceeds500Characters": "",
+      "seconds": "",
+      "minutes": "",
+      "unknown": ""
+    },
+    "locale": {
+      "helpText": "",
+      "resetNone": "",
+      "resetNoDefault": "",
+      "resetSuccess": "",
+      "setSuccess": "",
+      "setNone": "",
+      "alreadySet": ""
+    },
+    "mention": {
+      "role": "",
+      "user": "",
+      "noFeeds": "",
+      "subscriptionsList": "",
+      "description": "",
+      "subscriberOptions": "",
+      "optionAddSubscriber": "",
+      "optionAddSubscriberDescription": "",
+      "optionRemoveSubscriber": "",
+      "optionRemoveSubscriberDescription": "",
+      "optionRemoveAllSubscribers": "",
+      "optionRemoveAllSubscribersDescription": "",
+      "optionListSubscribers": "",
+      "optionListSubscribersDescription": "",
+      "promptUserOrRole": "",
+      "listSubscribersDescription": "",
+      "listSubscribersNone": "",
+      "removeAllSubscribersSuccess": "",
+      "addSubscriberExists": "",
+      "addSubscriberSuccess": "",
+      "notFeedSubscriber": "",
+      "removeSubscriberSuccess": "",
+      "removeAnySubscriberNone": "",
+      "invalidRoleOrUser": "",
+      "filters": {
+        "title": "",
+        "description": "",
+        "notSubscriber": "",
+        "optionAddFilter": "",
+        "optionRemoveFilter": "",
+        "optionRemoveAllFilters": "",
+        "optionListFilters": "",
+        "listFiltersDescription": "",
+        "listNoFilters": "",
+        "removedAllFilters": ""
+      }
+    },
+    "text": {
+      "prompt": "",
+      "noEmpty": "",
+      "noSetText": "",
+      "resetSuccess": "",
+      "setSuccess": "",
+      "noSubscriptionsPlaceholder": "",
+      "reminder": ""
+    },
+    "move": {
+      "prompt": "",
+      "invalidChannel": "",
+      "alreadyInChannel": "",
+      "linkAlreadyExists": "",
+      "meMissingPermission": "",
+      "meMissingEmbedLinks": "",
+      "youMissingPermission": "",
+      "moveFailed": "",
+      "moveSuccess": ""
+    },
+    "options": {
+      "miscFeedOptions": "",
+      "selectOption": "",
+      "onlyIfNecessary": "",
+      "titleChecks": "",
+      "titleChecksToggle": "",
+      "titleChecksDescription": "",
+      "imagePreviews": "",
+      "imagePreviewsToggle": "",
+      "imagePreviewsDescription": "",
+      "imageLinksExistence": "",
+      "imageLinksExistenceToggle": "",
+      "imageLinksExistenceDescription": "",
+      "dateChecks": "",
+      "dateChecksToggle": "",
+      "dateChecksDescription": "",
+      "tableFormatting": "",
+      "tableFormattingToggle": "",
+      "tableFormattingDescription": "",
+      "directSubscribers": "",
+      "directSubscribersToggle": "",
+      "directSubscribersDescription": "",
+      "settingChanged": "",
+      "defaultSetting": ""
+    },
+    "prefix": {
+      "helpText": "",
+      "resetNone": "",
+      "resetSuccess": "",
+      "requirements": "",
+      "cannotUseDefault": "",
+      "setSuccess": ""
+    },
+    "refresh": {
+      "noFailLimit": "",
+      "noFailedFeeds": "",
+      "processing": "",
+      "success": "",
+      "failed": ""
+    },
+    "remove": {
+      "removing": "",
+      "success": ""
+    },
+    "split": {
+      "messageSplittingOptions": "",
+      "description": "",
+      "enabledDescription": "",
+      "optionEnable": "",
+      "optionEnableDescription": "",
+      "optionDisable": "",
+      "optionSetSplitChar": "",
+      "optionSetSplitCharDescription": "",
+      "optionSetPrependChar": "",
+      "optionSetPrependCharDescription": "",
+      "optionSetAppendChar": "",
+      "optionSetAppendCharDescription": "",
+      "optionSetMaxLength": "",
+      "optionSetMaxLengthDescription": "",
+      "currentlySetTo": "",
+      "defaultIsValue": "",
+      "defaultIsNothing": "",
+      "newLine": "",
+      "promptSplitChar": "",
+      "promptPrependChar": "",
+      "promptAppendChar": "",
+      "promptMaxLen": "",
+      "setSplitCharDefault": "",
+      "setSplitChar": "",
+      "setPrependChar": "",
+      "setAppendChar": "",
+      "setMaxLen": "",
+      "setInvalidMaxLen": "",
+      "resetSplitChar": "",
+      "resetPrependChar": "",
+      "resetAppendChar": "",
+      "resetMaxLen": "",
+      "disabledSuccess": ""
+    },
+    "test": {
+      "failed": "",
+      "grabbingRandom": "",
+      "noArticles": "",
+      "noValidLatest": ""
+    },
+    "webhook": {
+      "existingFound": "",
+      "prompt": "",
+      "notFound": "",
+      "tooLong": "",
+      "noPermission": "",
+      "removeSuccess": "",
+      "connected": "",
+      "missingChannel": ""
+    },
+    "sub": {
+      "title": "",
+      "description": "",
+      "optionAddRole": "",
+      "optionAddRoleDescription": "",
+      "optionAddMe": "",
+      "optionAddMeDescription": "",
+      "optionSubscribedFeeds": "",
+      "optionSubscribedFeedsDescription": "",
+      "subscribedFeedsList": "",
+      "noSubscribedFeedsList": "",
+      "noEligible": "",
+      "invalidRole": "",
+      "listInputRole": "",
+      "addSuccess": "",
+      "directSubscribeExists": "",
+      "directSubscribeSuccess": "",
+      "alreadyHaveRole": "",
+      "directSubscriberDisabled": "",
+      "filters": {
+        "description": "",
+        "noSubscribedFeeds": "",
+        "optionAddFilters": "",
+        "optionAddFiltersDescription": "",
+        "optionRemoveFilters": "",
+        "optionRemoveFiltersDescription": "",
+        "optionRemoveAllFilters": "",
+        "optionRemoveAllFiltersDescription": "",
+        "optionListFilters": "",
+        "optionListFiltersDescription": "",
+        "optionSendFilteredArticle": "",
+        "optionSendFilteredArticleDescription": ""
+      }
+    },
+    "unsub": {
+      "optionRemoveRole": "",
+      "optionRemoveRoleDescription": "",
+      "optionRemoveMyself": "",
+      "optionRemoveMyselfDescription": "",
+      "optionRemoveAll": "",
+      "optionRemoveAllDescription": "",
+      "noEligibleRoles": "",
+      "noEligibleDirect": "",
+      "invalidRole": "",
+      "title": "",
+      "directRemoveList": "",
+      "listInputRole": "",
+      "roleRemoveSuccess": "",
+      "directRemoveSuccess": "",
+      "removeAllSuccess": ""
+    },
+    "utils": {
+      "filters": {
+        "title": "",
+        "dscription": "",
+        "summary": "",
+        "author": "",
+        "tags": "",
+        "feed": "",
+        "role": "",
+        "user": "",
+        "filtersCustomization": "",
+        "categoryDescription": "",
+        "invalidCategory": "",
+        "promptAdd": "",
+        "addSuccess": "",
+        "addFailed": "",
+        "updatedFor": "",
+        "testFiltersSubscriber": "",
+        "testFilters": "",
+        "removeFilterConfirm": "",
+        "removeFilterInvalid": "",
+        "removeSuccess": "",
+        "removeSuccessSubscriber": "",
+        "removeFailedNoExist": "",
+        "removeNone": "",
+        "listOfFilters": "",
+        "listOfFiltersDescription": "",
+        "regexExists": ""
+      }
+    }
+  },
+  "structs": {
+    "MenuUtils": {
+      "permissionWarning": "",
+      "closedInactivity": "",
+      "closed": ""
+    },
+    "FeedSelector": {
+      "noFeeds": "",
+      "noFeedsInChannel": "",
+      "feedSelectionMenu": "",
+      "action": "",
+      "prompt": "",
+      "multiSelect": "",
+      "noneSelected": "",
+      "exitToCancel": ""
+    },
+    "errors": {
+      "MenuOptionError": {
+        "message": ""
+      }
+    }
+  }
+}
